@@ -1,5 +1,15 @@
 # Alphabet Soup Deep Learning Model Report
 
+## Code Layout
+colab_notebooks
+  - AlphabetSoupCharity.ipynb
+  - AlphabetSoupCharity_Optimization.ipynb
+
+colab_h5files
+  - AlphabetSoupCharity.h5
+  - AlphabetSoupCharity_Optimization.h5
+
+
 ## Overview of the Analysis
 
 The purpose of this analysis is to develop a deep learning model that can predict the success of funding applicants based on various features. Alphabet Soup, a nonprofit foundation, wants to maximize its funding efficiency by identifying applicants with the highest likelihood of success. Using a neural network model, this project classifies whether applicants will use funding successfully.
@@ -8,24 +18,24 @@ The purpose of this analysis is to develop a deep learning model that can predic
 
 ### Data Preprocessing
 
-- **Target Variable**: 
+- **Target Variable**:
   - The target variable is `IS_SUCCESSFUL`, which indicates whether an applicant’s funding was used successfully.
 
 - **Feature Variables**:
   - Features include the following variables:
-    - `APPLICATION_TYPE`, `AFFILIATION`, `CLASSIFICATION`, `USE_CASE`, `ORGANIZATION`, `STATUS`, `INCOME_AMT`, `SPECIAL_CONSIDERATIONS`, `ASK_AMT`
+  - `APPLICATION_TYPE`, `AFFILIATION`, `CLASSIFICATION`, `USE_CASE`, `ORGANIZATION`, `STATUS`, `INCOME_AMT`, `SPECIAL_CONSIDERATIONS`, `ASK_AMT`
   - These variables provide important information about each application and help the model predict success.
 
 - **Removed Variables**:
   - The following variables were removed because they are neither targets nor features:
-    - `EIN` (Employer Identification Number) and `NAME`
+  - `EIN` (Employer Identification Number) and `NAME`
   - These columns were dropped as they do not contribute meaningful information for prediction.
 
 ### Compiling, Training, and Evaluating the Model
 
 - **Neurons, Layers, and Activation Functions**:
   - **Layers and Neurons**: The neural network model has three hidden layers:
-    - The first layer has 100 neurons, the second layer has 50 neurons, and the third layer has 25 neurons.
+  - The first layer has 100 neurons, the second layer has 50 neurons, and the third layer has 25 neurons.
   - **Activation Functions**: ReLU was used for the hidden layers, and sigmoid for the output layer.
   - This structure was selected to balance complexity and performance, aiming to capture patterns within the dataset without overfitting.
 
@@ -41,7 +51,7 @@ The purpose of this analysis is to develop a deep learning model that can predic
 
 ### Summary
 
-The deep learning model for Alphabet Soup’s funding prediction task achieved reasonable results, with a peak accuracy of about 73%. While this falls slightly below the target of 75%, the model effectively identified key patterns in the data. 
+The deep learning model for Alphabet Soup’s funding prediction task achieved reasonable results, with a peak accuracy of about 73%. While this falls slightly below the target of 75%, the model effectively identified key patterns in the data.
 
 **Recommendation**:
 For further improvement, a different model, such as a **Random Forest Classifier** or **Gradient Boosting Model**, could be considered. These models excel at handling structured/tabular data and may outperform neural networks in terms of accuracy and interpretability for this classification problem.
